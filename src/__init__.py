@@ -1,0 +1,1 @@
+"""Khởi tạo package src cho đồ án KHDL — Phân tích & Gợi ý Bất động sản."""

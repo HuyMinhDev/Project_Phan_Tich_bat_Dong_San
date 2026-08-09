@@ -1,8 +1,8 @@
-"""Pipeline CLI end-to-end cho đồ án KHDL chuyên đề 3.
+"""Pipeline CLI end-to-end cho đồ án KHDL chuyên đề 3 (căn hộ/chung cư).
 
 Chạy:
     python -m src.pipeline \
-        --data-path data/raw/real_estate_with_price_per_m2.csv \
+        --data-path data/raw/real_estate_apartment.xlsx \
         --amenities-path data/raw/neighborhood_amenities.csv \
         --output-dir data/processed \
         --reports-dir reports
@@ -33,21 +33,26 @@ from src.recommender import RecommendationEngine
 from src.segmenter import KMeansSegmenter, pick_k_by_silhouette
 
 
+# Numeric features dùng cho ML — căn hộ: diện tích + phòng + mã categorical số
 NUMERIC_COLS = [
     "area_m2",
     "bedrooms",
     "bathrooms",
-    "floor_count",
-    "frontage_width",
+    "direction_code",
+    "balcony_code",
+    "furnishing_code",
+    "legal_code",
+    "image_count",
+    "apartment_type",
 ]
-CATEGORICAL_COLS = ["district_clean", "direction_clean"]
+CATEGORICAL_COLS = ["district_clean", "direction_clean", "project_name"]
 TARGET = "price_per_m2"
 RANDOM_STATE = 42
 
 
 def _build_argparser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="KHDL pipeline — BĐS TP.HCM")
-    p.add_argument("--data-path", type=Path, default=Path("data/raw/real_estate_with_price_per_m2.csv"))
+    p = argparse.ArgumentParser(description="KHDL pipeline — BĐS căn hộ TP.HCM")
+    p.add_argument("--data-path", type=Path, default=Path("data/raw/real_estate_apartment.xlsx"))
     p.add_argument("--amenities-path", type=Path, default=Path("data/raw/neighborhood_amenities.csv"))
     p.add_argument("--output-dir", type=Path, default=Path("data/processed"))
     p.add_argument("--logs-dir", type=Path, default=Path("data/logs"))
@@ -55,6 +60,23 @@ def _build_argparser() -> argparse.ArgumentParser:
     p.add_argument("--test-size", type=float, default=0.2)
     p.add_argument("--k-range", type=int, nargs=2, default=[3, 6])
     return p
+
+
+def _prepare_features(merged: pd.DataFrame) -> pd.DataFrame:
+    """Đảm bảo tất cả cột feature tồn tại; điền NaN hợp lý cho numeric/categorical.
+
+    Cột numeric NaN → median của tập (sẽ do Pipeline SimpleImputer xử lý,
+    nhưng ta vẫn điền tạm để tránh drop dòng trong train_test_split).
+    Cột categorical NaN → "missing" (Pipeline sẽ impute constant).
+    """
+    df = merged.copy()
+    for col in NUMERIC_COLS:
+        if col not in df.columns:
+            df[col] = np.nan
+    for col in CATEGORICAL_COLS:
+        if col not in df.columns:
+            df[col] = "missing"
+    return df
 
 
 def main() -> int:
@@ -87,6 +109,7 @@ def main() -> int:
     pre = build_preprocessor(NUMERIC_COLS, CATEGORICAL_COLS)
     feature_cols = NUMERIC_COLS + CATEGORICAL_COLS
     df = merged.dropna(subset=[TARGET]).copy()
+    df = _prepare_features(df)
     df[feature_cols] = df[feature_cols].fillna({c: "missing" for c in CATEGORICAL_COLS})
     X = df[feature_cols]
     y = df[TARGET].astype(float)
@@ -102,6 +125,7 @@ def main() -> int:
     metrics: dict = {
         "random_state": RANDOM_STATE,
         "test_size": args.test_size,
+        "data_path": str(args.data_path),
         "models": {},
     }
     for name in ["dummy", "linear", "rf", "gbr"]:
@@ -110,7 +134,6 @@ def main() -> int:
             model_name=name, log_target=True,
             n_splits=5, random_state=RANDOM_STATE,
         )
-        # Train final trên toàn bộ train, đánh giá trên test
         pred = PricePredictor(model_name=name, log_target=True, random_state=RANDOM_STATE).fit(
             X_train_t, y_train.values
         )
@@ -148,27 +171,27 @@ def main() -> int:
     eng = RecommendationEngine()
     sample_profiles = [
         {
-            "name": "Gia đình trẻ, 5 tỷ, Quận 7 hoặc Bình Thạnh",
-            "budget_vnd": 5e9,
-            "target_bedrooms": 3,
-            "target_area_m2": 70.0,
-            "preferred_districts": ["Quận 7", "Quận Bình Thạnh"],
-            "preferred_cluster": 1,
-        },
-        {
-            "name": "Nhà đầu tư, 8 tỷ, Quận 2 hoặc Quận 9 (Thủ Đức)",
-            "budget_vnd": 8e9,
-            "target_bedrooms": 3,
-            "target_area_m2": 80.0,
-            "preferred_districts": ["Quận 2", "Quận 9", "Quận Thủ Đức"],
+            "name": "Gia đình trẻ, 3 tỷ, Thủ Đức hoặc Bình Thạnh",
+            "budget_vnd": 3e9,
+            "target_bedrooms": 2,
+            "target_area_m2": 65.0,
+            "preferred_districts": ["Thành phố Thủ Đức", "Quận Bình Thạnh"],
             "preferred_cluster": 0,
         },
         {
-            "name": "Người mua đầu tiên, 3 tỷ, ngoại thành",
-            "budget_vnd": 3e9,
+            "name": "Nhà đầu tư, 5 tỷ, Quận 7 hoặc Bình Tân",
+            "budget_vnd": 5e9,
             "target_bedrooms": 2,
-            "target_area_m2": 60.0,
-            "preferred_districts": ["Huyện Bình Chánh", "Huyện Củ Chi", "Huyện Hóc Môn"],
+            "target_area_m2": 70.0,
+            "preferred_districts": ["Quận 7", "Quận Bình Tân"],
+            "preferred_cluster": 1,
+        },
+        {
+            "name": "Người mua cao cấp, 7 tỷ, Thủ Đức hoặc Quận 7",
+            "budget_vnd": 7e9,
+            "target_bedrooms": 3,
+            "target_area_m2": 85.0,
+            "preferred_districts": ["Thành phố Thủ Đức", "Quận 7"],
             "preferred_cluster": 2,
         },
     ]

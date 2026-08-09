@@ -1,11 +1,197 @@
-profile,listing_id,title,description,property_type,province,district,ward,street_name,project_name,total_price,area_m2,price_per_m2,floor_count,frontage_width,house_depth,road_width,bedrooms,bathrooms,house_direction,posted_at,district_clean,direction_clean,amenity_score,cluster,score_price,score_area,score_segment,score_amenity,score_total,score_components
-"Gia đình trẻ, 5 tỷ, Quận 7 hoặc Bình Thạnh",285,Nhà mặt tiền Bình Thạnh cần tìm chủ - giá tốt nhất từ trước đến nay,"Diện tích 5x15m. 1 trệt 3 lầu bao gồm 3 phòng ngủ 3wc. Mặt tiền đường rộng 20m xe hơi đi thoải mái. Gần trường học, chợ, trung tâm thương mại và trường học. Tiện di chuyển vào trung tâm. Xem nhà liên hệ ngay cho tôi nhé.",Nhà,Hồ Chí Minh,Bình Thạnh,2,,,6000000000.0,75.0,80000000.0,,,,,3.0,3.0,Đông Nam,2025-06-11 11:08:03.931,Quận Bình Thạnh,Đông Nam,11.8,1,0.8800000000000001,0.9285714285714286,0.3,0.2,2.3085714285714287,"{'price': 0.8800000000000001, 'area': 0.9285714285714286, 'segment': 0.3, 'amenity': 0.2}"
-"Gia đình trẻ, 5 tỷ, Quận 7 hoặc Bình Thạnh",1545,"Nhà mới 65,2m2, giá 5,9 tỷ, 2 tầng, 3 phòng ngủ, Chuyên Dùng Chính, quận 7","Bán nhà hẻm Chuyên Dùng Chính - 65.2m² - 3PN - 2WC - Giá 5.9 tỷ - Quận 7. - Diện tích: 4 x 16.3 (65.2m²). - Nội thất: Đầy đủ. - Kết cấu: Trệt, lầu, 3PN, 2WC. - Khu dân cư hiện hữu, dân trí cao, an ninh tốt. - Pháp lý chuẩn - Sổ hồng riêng - Hoàn công đủ - Công chứng ngay. - Gần khu Phú Mỹ Hưng, khu phố Nam Viên. - Gần khu tái định cư Phú Mỹ. - Gần Crescent Mall. Gần trung tâm hội chợ và triển lãm Sài Gòn. - Gần kho xăng dầu Nhà Bè. - Thuận tiên qua Nhà Bè, Quận 4, Quận 2, Quận 8, Bình Chánh. - Gần chợ Phước Long, Chợ Phú Xuân, Chợ Dân Sinh Nhà Bè. - Gần Coopmart Huỳnh Tấn Phát. - Gần sông Soài Rạp. - Gần khu phức hợp Sài Gòn PeninSula Quận 7. - Gần cầu Phú Mỹ, cầu Cả Cấm 2, cầu Phước Long, cầu Phú Thuận, cầu Phú Xuân 2, cầu Ánh Sao. - Gần Trung tâm văn hoá Q7, Ban chỉ huy quân sự, Trung tâm hành chính Q7. - Gần trường tiểu học Phú Mỹ, trường trung học cơ sở Hoàng Quốc Việt, trường Quốc tế Canada - Việt Nam, trường tiểu học Phạm Hữu Lầu, trường trung học cơ sở Phạm Hữu Lầu, trường trung học cơ sở Ngô Quyền, trường quốc tế Hàn Quốc, trường quốc tế Đài Loan, trường quốc tế Nhật Bản, trường TH - THCS - THPT Nam Sài Gòn, trường tiểu học Phú Thuận. - Gần trường Cao Đẳng Giao Thông Vận Tải Đường thủy II. - Gần bệnh viện Tâm Đức, Trung tâm y tế Q7, Trung tâm y tế Nhà Bè. - Gần đường Huỳnh Tấn Phát, Phạm Hữu Lầu, Hoàng Quốc Việt, Đào Trí, Lê Văn Lương, Nguyễn Hữu Thọ, Phú Thuận, Nguyễn Văn Linh, Lê Thị Chợ, Gò Ô Môi, Tân Phú, Nguyễn Văn Tưởng, Dương Cát Lợi.",Nhà,Hồ Chí Minh,7,Phú Mỹ,Chuyên Dùng Chính,,5900000000.0,65.2,90490797.54601227,2.0,4.0,16.3,,3.0,2.0,Tây,2025-06-09 04:22:53.412,Quận 7,Tây,7.6,1,0.7331288343558283,0.9314285714285715,0.3,0.1288135593220339,2.0933709651064336,"{'price': 0.7331288343558283, 'area': 0.9314285714285715, 'segment': 0.3, 'amenity': 0.1288135593220339}"
-"Gia đình trẻ, 5 tỷ, Quận 7 hoặc Bình Thạnh",2689,Bán nhà hẻm đường Huỳnh Tấn Phát quận 7,"Nhà bán Quận 7 - Huỳnh Tấn Phát Bán nhà hẻm đường Huỳnh Tấn Phát, Quận 7. Diện tích: 4.5m x 17m (luôn sân để được 10xe) trệt, lửng, 4PN (2PN dưới đất) 1WC. Pháp lý: sổ hồng riêng Giá: 4.750 tỷ TL.",Nhà,Hồ Chí Minh,7,Phú Thuận,Huỳnh Tấn Phát,,4750000000.0,67.5,70370370.37037037,,3.0,,,4.0,2.0,Đông Bắc,2025-06-18 15:38:31.171,Quận 7,Đông Bắc,5.3,2,0.9851851851851852,0.9642857142857143,0.0,0.08983050847457627,2.0393014079454757,"{'price': 0.9851851851851852, 'area': 0.9642857142857143, 'segment': 0.0, 'amenity': 0.08983050847457627}"
-"Gia đình trẻ, 5 tỷ, Quận 7 hoặc Bình Thạnh",527,56.7m2 - 3PN - 2 tầng - Giá 4.9 tỷ - Hẻm Huỳnh Tấn Phát - Quận 7,"Bán nhà hẻm Huỳnh Tấn Phát - 56.7m2 - 3PN - 2WC - Giá 4.9 tỷ - Quận 7. - Diện tích: 5.3 x 11 (56.7m2). - Nội thất: Đầy đủ. - Kết cấu: Trệt, lầu, 3PN, 2WC. - Khu dân cư hiện hữu, dân trí cao, an ninh tốt. - Pháp lý chuẩn - Sổ hồng riêng - Hoàn công đủ - Công chứng ngay. - Gần khu Phú Mỹ Hưng, khu phố Nam Viên. - Gần khu tái định cư Phú Mỹ. - Gần Crescent Mall. Gần trung tâm hội chợ và triển lãm Sài Gòn. - Gần kho xăng dầu Nhà Bè. - Thuận tiên qua Nhà Bè, Quận 4, Quận 2, Quận 8, Bình Chánh. - Gần chợ Phước Long, Chợ Phú Xuân, Chợ Dân Sinh Nhà Bè. - Gần Coopmart Huỳnh Tấn Phát. - Gần sông Soài Rạp. - Gần khu phức hợp Sài Gòn PeninSula Quận 7. - Gần cầu Phú Mỹ, cầu Cả Cấm 2, cầu Phước Long, cầu Phú Thuận, cầu Phú Xuân 2, cầu Ánh Sao. - Gần Trung tâm văn hoá Q7, Ban chỉ huy quân sự, Trung tâm hành chính Q7. - Gần trường tiểu học Phú Mỹ, trường trung học cơ sở Hoàng Quốc Việt, trường Quốc tế Canada - Việt Nam, trường tiểu học Phạm Hữu Lầu, trường trung học cơ sở Phạm Hữu Lầu, trường trung học cơ sở Ngô Quyền, trường quốc tế Hàn Quốc, trường quốc tế Đài Loan, trường quốc tế Nhật Bản, trường TH - THCS - THPT Nam Sài Gòn, trường tiểu học Phú Thuận. - Gần trường Cao Đẳng Giao Thông Vận Tải Đường thủy II. - Gần bệnh viện Tâm Đức, Trung tâm y tế Q7, Trung tâm y tế Nhà Bè, phòng khám tư nhân. - Gần đường Huỳnh Tấn Phát, Phạm Hữu Lầu, Hoàng Quốc Việt, Đào Trí, Lê Văn Lương, Nguyễn Hữu Thọ, Phú Thuận, Nguyễn Văn Linh, Lê Thị Chợ, Gò Ô Môi, Tân Phú, Nguyễn Văn Tưởng, Dương Cát Lợi.",Nhà,Hồ Chí Minh,7,Phú Mỹ,Huỳnh Tấn Phát,,4900000000.0,56.7,86419753.08641975,,5.0,,,3.0,2.0,Tây,2025-06-07 17:58:46.013,Quận 7,Tây,7.6,1,0.7901234567901236,0.81,0.3,0.1288135593220339,2.028937016112158,"{'price': 0.7901234567901236, 'area': 0.81, 'segment': 0.3, 'amenity': 0.1288135593220339}"
-"Gia đình trẻ, 5 tỷ, Quận 7 hoặc Bình Thạnh",1602,Giảm sâu 400 triệu sở hữu nhà cho thuê phan văn trị bình thạnh giá 4 tỷ đầu tư cho thuê cực kỳ tốt,"___ SIÊU PHẨM NHÀ ĐẸP PHAN VĂN TRỊ PHƯỜNG 11 QUẬN BÌNH THẠNH ___ GIÁ TỐT THỊ TRƯỜNG: 4 TỶ 000 THƯƠNG LƯỢNG ___ NHÀ ĐẸP PHAN VĂN TRỊ PHƯỜNG 11 QUẬN BÌNH THẠNH GIÁ 4 TỶ 000 FULL NỘI THẤT GẦN HXH! ___ CẦN TIỀN XOAY SỞ VIỆC GIA ĐÌNH BÁN GẤP GIÁ TỐT --------------------------------------------------------------------------------------------- * Vị Trí: ĐƯỜNG PHAN VĂN TRỊ PHƯỜNG 11 QUẬN BÌNH THẠNH * Giá: Chỉ 4 TỶ 000 ( Thương Lượng Nhanh ) * Diện Tích: ( 52.6m ) * Ngang : ( 4.2m ) * Dài : ( 12.5m ) (+) Kết Cấu: 1 Trệt 2 Lầu, Tường Riêng Đúc Chắc Chắn Gồm: (+) Phòng Khách Sang Trọng (+) Bếp Hiện Đại (+) 4 Phòng Ngủ Rộng Rãi (+) 5 Toilet Tiện Nghi (+) Phòng Thờ + Sân Thượng Thoáng Mát (=) Đường Xa Rộng Rãi Di Chuyển Dễ Dàng +) Đường Trước Nhà 6m, Hẻm Xe Hơi Hẻm Thông Cách 100m Ra Mặt Tiền Đường Lớn 18m +) Nằm Ngay Trung Tâm Thành Phố , Chợ SẦM Uất, Môi Trường Sống Tốt +) Đầy Đủ Tất Cả Các Tiện Ích Có Công Viên Khu Vui Chơi Giải Trí Trung Tâm Mua Sắm Trường Học, Trung Tâm Hành Chính +) Nhà Vuông Vắn Nhìn Hợp Nhãn (=) Phong Thuỷ Tốt +) Khu Vực An NInh +) Dân Cư Văn Hoá Văn MInh +) Môi Trườn Sống Tốt +) Sổ Hồng Riêng, Pháp Lý Chuẩn = Kinh Doanh Mua Bán Vô Cùng Đông Đúc = TẶNG FULL Nội Thất Cao Cấp Xách Vali Vào Ở Ngay! --------------------------------------------------------------------------------------------- = Liên Hệ Xem Nhà Và Được Hộ Trợ Thực Tế : [phone_number] Gặp QUÝ",Nhà,Hồ Chí Minh,Bình Thạnh,11,Phan Văn Trị,,4000000000.0,52.0,76923076.92307693,,6.0,,,4.0,4.0,Đông,2025-06-29 07:14:13.923,Quận Bình Thạnh,Đông,8.5,2,0.9230769230769231,0.7428571428571429,0.0,0.1440677966101695,1.8100018625442356,"{'price': 0.9230769230769231, 'area': 0.7428571428571429, 'segment': 0.0, 'amenity': 0.1440677966101695}"
-"Người mua đầu tiên, 3 tỷ, ngoại thành",1390,Bán nhà gân chợ đầu mối hóc môn,"Chính Chủ Gửi BÁN NHÀ SHR 1 TRỆT 1 LẦU Rẻ Như Lô Đất Giá 3,58 tỷ thương lượng Diện tích: Ngang 5m x Dài 14m Hướng nhà Đông Bắc Kết cấu: 1 trệt, 1 lầu 3 phòng ngủ, 2 tolet -Đường: Bê tông rộng rãi oto tới nhà Vị Trí Cách đường Trần Văn Mười chỉ 50m Cách chợ đầu mối chỉ 300m Khu dân cư hiện hữu, tiện ích xung quanh đầy đủ Hỗ trợ vay ngân hàng LH Nhà Đất Minh Thức để đi xem nhà trực tiếp",Nhà,Hồ Chí Minh,Hóc Môn,Bà Điểm,Nguyễn Thị Sáu,,3580000000.0,70.0,51142857.14285714,,5.0,,,3.0,3.0,Đông Bắc,2025-06-02 12:04:49.929,Huyện Hóc Môn,Đông Bắc,5.3,2,0.9771428571428572,0.8333333333333334,0.3,0.2,2.310476190476191,"{'price': 0.9771428571428572, 'area': 0.8333333333333334, 'segment': 0.3, 'amenity': 0.2}"
-"Người mua đầu tiên, 3 tỷ, ngoại thành",2942,"Bán nhà số hồng riêng 4x14m, giá 2 tỷ 8","Nhà đẹp mua xong dọn vào ở ngay. Nhà ngay trung tâm xã Vĩnh Lộc A. Nhà gần chợ, gần trường, gần các tiện ích. Nhà khu an ninh. Nhà sổ hồng riêng, hoàn công đầy đủ. Ace cần mua nhà sổ hồng riêng. Gọi em Hạnh Kim nha.",Nhà,Hồ Chí Minh,Bình Chánh,Vĩnh Lộc A,Phạm Thị Tánh,,2800000000.0,56.0,50000000.0,,,,,3.0,2.0,Bắc,2025-06-20 04:36:09.717,Huyện Bình Chánh,Bắc,,0,1.0,0.9333333333333333,0.0,0.0,1.9333333333333333,"{'price': 1.0, 'area': 0.9333333333333333, 'segment': 0.0, 'amenity': 0.0}"
-"Người mua đầu tiên, 3 tỷ, ngoại thành",1109,"Nhà Quách Điêu Vĩnh Lộc A, Pháp lý đủ điều kiện làm sổ hồng riêng","Nhà riêng tọa lạc tại đường Quách Điêu, xã Vĩnh Lộc A, Bình Chánh, Hồ Chí Minh, sở hữu diện tích 56m, diện tích sử dụng 84.8 m2, với 2 phòng ngủ, 2 toilet, tầng trệt suốt thẳng gồm hiên phòng khách bếp ăn, với giá bán 2,45 tỷ VND (thương lượng chính chủ). Chính chủ thiết kế theo không gian hiện đại, rộng rãi phù hợp với gia đình đông thành viên, nhiều không gian sinh hoạt. Liên hệ SĐT chính chủ nhà: *** - 2 phòng ngủ rộng rãi, tạo không gian riêng tư thoải mái. - 2 toilet tiện nghi, đáp ứng nhu cầu sinh hoạt hàng ngày. - Hướng cửa chính Tây, mang lại ánh sáng tự nhiên và phong thủy tốt. - Chiều ngang mặt tiền 4m, tạo không gian thoáng đãng. - Hẻm rộng xe hơi 6m, thuận tiện cho việc di chuyển, đậu xe. Điểm nổi bật: - Pháp lý số nhà huyện, hồ sơ đủ điều kiện làm sổ hồng riêng - Phong thủy tốt, phù hợp cho gia đình. - Mặt tiền rộng, có thể kinh doanh hoặc cho thuê. - Đường vào rộng rãi, thuận tiện cho xe hơi. Gần các tiện ích: - Gần trường tiểu học Vĩnh Lộc Quách Điêu, Trường THCS Đồng Đen Vĩnh Lộc A (1km) - Cách sân bóng đá mini Demi 100m - Cách chợ liên ấp 6-2, bách hóa xanh 1km - KDC được phép xây dựng nhà (có hàng xóm sắp hoàn thành nhà)",Nhà,Hồ Chí Minh,Bình Chánh,,,,2450000000.0,56.0,43750000.0,,4.0,,,2.0,2.0,Tây,2025-06-29 06:14:06.440,Huyện Bình Chánh,Tây,,0,0.875,0.9333333333333333,0.0,0.0,1.8083333333333333,"{'price': 0.875, 'area': 0.9333333333333333, 'segment': 0.0, 'amenity': 0.0}"
-"Người mua đầu tiên, 3 tỷ, ngoại thành",1728,Gia đình cần bán nhà thiết kế 1 trệt 1 lầu mới xây(DT 80m2). Sổ hồng riêng. Đường nhựa 12m,"Nhà mới 100%. Tổng diện tích sử dụng 160m2. Thiết kế 1 trệt 1 lầu bàn giao nhà full nội thất như hình. Tổng 3 PN, 2 WC, 1 phòng khách, phòng thờ, sân sau 2m rộng rãi thoáng mát. Giá bớt lộc lá. Nhà hoàn công. Pháp lý sạch. Ngân hàng hỗ trợ 80%. Đường 12m ô tô vào tận nơi. Di chuyển về bệnh viện Xuyên Á mất 5p. Lh xem nhà [phone_number]",Nhà,Hồ Chí Minh,Củ Chi,Tân Phú Trung,Cây Da,,3050000000.0,80.0,38125000.0,,,,,3.0,2.0,Tây Bắc,2025-06-03 07:43:54.889,Huyện Củ Chi,Tây Bắc,,1,0.7625,0.6666666666666667,0.0,0.0,1.4291666666666667,"{'price': 0.7625, 'area': 0.6666666666666667, 'segment': 0.0, 'amenity': 0.0}"
-"Người mua đầu tiên, 3 tỷ, ngoại thành",409,"Bán nhà mặt tiền Hoàng Phan Thái sổ riêng cách chợ Bình Chánh 200m, khu dân cư hiện hữu","Siêu phẩm nhà phố hẻm rộng, gần chợ, trường học giá mềm. - Địa chỉ: Cách chợ Bình Chánh 200m, Hoàng Phan Thái, Bình Chánh. - Diện tích: 5m x 16m. - Kết cấu: 3 phòng ngủ, 2WC, phòng khách, phòng thờ, bếp. - Pháp lý: Sổ hồng riêng, sang tên công chứng liền tay. - Tiện ích xung quanh: Dân cư đông đúc an ninh, gần chợ, trường học, công ty.",Nhà,Hồ Chí Minh,Bình Chánh,Bình Chánh,Hoàng Phan Thái,,2670000000.0,80.0,33375000.0,,,,,3.0,2.0,Tây Nam,2025-06-25 03:44:02.228,Huyện Bình Chánh,Tây Nam,,0,0.6675,0.6666666666666667,0.0,0.0,1.3341666666666667,"{'price': 0.6675, 'area': 0.6666666666666667, 'segment': 0.0, 'amenity': 0.0}"
+profile,id,listing_id,title,description,property_type,apartment_type,project_name,province,district,ward,street,latitude,longitude,area_m2,bedrooms,bathrooms,direction,balcony_direction,furnishing_status,legal_status,total_price,price_text,price_per_m2,posted_at,updated_at,image_count,status,source,url,crawled_at,created_at,db_updated_at,district_clean,direction_clean,furnishing_label,legal_label,direction_code,balcony_code,furnishing_code,legal_code,amenity_score,cluster,score_price,score_area,score_segment,score_amenity,score_total,score_components
+"Gia đình trẻ, 3 tỷ, Thủ Đức hoặc Bình Thạnh",3645,177591150,CHÍNH CHỦ CẦN BÁN CHUNG CƯ 2PN 2TOILET Beverly Solari 3TỶ050TRIỆU 64M2,"Chính chủ cần bán gấp căn hộ Beverly Solari 2PN, 2WC nhà chưa qua cho thuê giá: 3TỶ050TRIỆU
+
+- PHÂN KHU CAO CẤP NGAY VINCOM VÀ QUẢNG TRƯỜNG 
+Tổng giá: 3tỷ050
+Ngân hàng hỗ trợ: 75% - 80% ( vcb, vtb, mb, acb, msb, tcb ) Tiện ích: công viên, hồ bơi, 36ha, vincom, vinschool, vin wonder
+
+
+- Có ban công riêng thoáng mát.
+
+- Nhà có sẵn nội thất: Có sẵn rèm, bếp trên dưới, máy lạnh,...
+
++ Khu dân cư dân trí cao, an ninh 24/24.    
+Giá trên có hỗ trợ vay ngân hàng, nhà có trang bị các nội thất.
+Liên hệ em NGỌC *** để xem nhà và gặp chủ ạ.
+Em còn nhiều căn đẹp, anh chị quan tâm nhà SG liên hệ em nhé!
+Cảm ơn anh chị đã xem tin.",Căn hộ/Chung cư,1,The Beverly Solari - Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Thạnh Mỹ (Quận 9 cũ),Nguyễn Xiển,10.8454,106.81972,64.0,2.0,2.0,5.0,2.0,2.0,5.0,3050000000,"3,05 tỷ",47656250.0,2026-07-21 12:06:47.000,,3,active,chotot,https://www.chotot.com/13000/1010/177591150.htm,2026-08-08 08:39:59.735,2026-08-08 08:39:59.735,2026-08-08 08:39:59.735,Thành phố Thủ Đức,Đông Nam,Nội thất cơ bản,Sổ hồng chung,5.0,2.0,2.0,5.0,403.4,0,0.9674479166666666,0.9846153846153847,0.3,0.2,2.452063301282051,"{'price': 0.9674479166666666, 'area': 0.9846153846153847, 'segment': 0.3, 'amenity': 0.2}"
+"Gia đình trẻ, 3 tỷ, Thủ Đức hoặc Bình Thạnh",3530,177838754,"Bán căn hộ Vinhomes Grand Park, 65m², 2PN, có nội thất","Dự án: 
+Thông tin chi tiết: Chính chủ thiện chí bán căn hộ đẹp có chỗ đậu xe ô tô, căn 2 phòng ngủ 2 WC,
+tặng nội thất tại Vinhomes Grand Park Quận 9.
+Khu cụm tòa S2 đẹp.
+ Diện tích 65m².
+Tầng trung đẹp.
+Ban công nhà mình Đông Nam nên đón nắng sớm và chiều mát mẻ, đem lại nguồn sinh
+khí tốt cho sức khỏe gia đình.
+Mình ở đây rất thích nhưng chuyển công tác nước ngoài nên gia đình mình cần bán
+lại.
+Gia đình mình về ở lúc nhận nhà 8/2020 nên có chỗ đậu xe ô tô rất tiện, hiện
+những căn khác muốn có chỗ để xe ô tô phải đăng ký BQL và đợi rất lâu, hoặc đậu
+bên ngoài ít chi phí hơn nhưng hơi bất tiện.
+
+Tiện ích ở Vin thì bạn biết rồi nhé.
+Ở đây được nhất là nhiều cây xanh và rạch nhân tạo, nhiều nâng diện tích mặt
+nước, nên nhiệt độ luôn thấp hơn so với các khu dân cư bên ngoài tầm 3 độ C.
+Thiện chí mua thì mình có thương lượng nhẹ.
+Mình làm việc online tại nhà nên bạn muốn xem nhà thì báo trước mình 60 phút.
+Vì lý do cá nhân nên mình không ghi mã căn trực tiếp trên đây, bạn cần thông tin
+nhắn Giang qua Zalo.
+Cảm ơn bạn đã xem tin.
+LH ",Căn hộ/Chung cư,1,Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Thạnh Mỹ (Quận 9 cũ),Nguyễn Xiển,10.8454,106.81972,65.0,2.0,,,,2.0,,3190000000,"3,19 tỷ",49076923.07692308,2026-08-04 12:42:02.207,2026-08-01 13:33:42,10,active,chotot,https://www.chotot.com/13000/1010/177838754.htm,2026-08-08 08:39:49.208,2026-08-08 08:39:49.208,2026-08-08 08:48:33.257,Thành phố Thủ Đức,missing,Nội thất cơ bản,,,,2.0,,403.4,0,0.9366666666666665,1.0,0.3,0.2,2.4366666666666665,"{'price': 0.9366666666666665, 'area': 1.0, 'segment': 0.3, 'amenity': 0.2}"
+"Gia đình trẻ, 3 tỷ, Thủ Đức hoặc Bình Thạnh",3814,175863420,"RA CĂN GIÁ TỐT SAIGON GATEWAY BÁN 2PN 2.9TỶ BAO THUẾ PHÍ, CHỦ GẤP BÁN","NHẬN NGAY NHÀ MỚI TẠI SAIGON GATEWAY
+
+- Miễn phí hồ bơi + gym + phí quản lý...
+
+- Đầy đủ tiện ích như siêu thị Co. Op Mart, Vin Mart, Family Mart, cafe Trung Nguyên, ngân hàng Tiên Phong, trà sữa, salon tóc, phở, hủ tiếu, cơm tấm,...",Căn hộ/Chung cư,1,Saigon Gateway,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Hiệp Phú (Quận 9 cũ),Đường Xa lộ Hà Nội,10.85097,106.77665,66.0,2.0,2.0,5.0,,3.0,6.0,2900000000,"2,9 tỷ",43939393.93939394,2026-07-27 02:07:40.054,2026-07-23 02:27:35,11,active,chotot,https://www.chotot.com/13000/1010/175863420.htm,2026-08-08 08:41:26.429,2026-08-08 08:41:26.429,2026-08-08 08:41:26.429,Thành phố Thủ Đức,Đông Nam,Nội thất đầy đủ,Sổ hồng riêng,5.0,,3.0,6.0,403.4,0,0.952020202020202,0.9846153846153847,0.3,0.2,2.4366355866355867,"{'price': 0.952020202020202, 'area': 0.9846153846153847, 'segment': 0.3, 'amenity': 0.2}"
+"Gia đình trẻ, 3 tỷ, Thủ Đức hoặc Bình Thạnh",3556,177920244,Bán nhanh căn hộ 2PN View hồ bơi toà S102 chỉ 2.8T,"Bán nhanh căn hộ Rainbow 2PN1WC view hồ bơi rất đẹp
+Mã căn:S1.02 tầng trung
+View: trực diện Hồ Bơi nội khu
+Diện tích: 61.5m2 tìm tường
+Hướng ban công: Đông Bắc
+Pháp lý: sổ sẵn, ko vay, công chứng ngay
+Nội thất: Bếp rèm
+Tình trạng: nhà đang cho thuê 6.5tr/tháng
+Đã có sổ hồng.",Căn hộ/Chung cư,1,Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Thạnh Mỹ (Quận 9 cũ),Nguyễn Xiển,10.8454,106.81972,61.5,2.0,1.0,,5.0,,,2800000000,"2,8 tỷ",45528455.28455284,2026-08-05 08:45:01.000,,4,active,chotot,https://www.chotot.com/13000/1010/177920244.htm,2026-08-08 08:39:51.569,2026-08-08 08:39:51.569,2026-08-08 08:39:51.569,Thành phố Thủ Đức,missing,,,,5.0,,,403.4,0,0.9864498644986449,0.9461538461538461,0.3,0.2,2.432603710652491,"{'price': 0.9864498644986449, 'area': 0.9461538461538461, 'segment': 0.3, 'amenity': 0.2}"
+"Gia đình trẻ, 3 tỷ, Thủ Đức hoặc Bình Thạnh",3557,174651042,Vinhomes Grand Park - 2PN - View đẹp ngắm hoàng hôn Landmark81,"VIEW đẹp Landmark81 - Tầng cao thoáng mát mẻ, yên tĩnh 🙌  :-* ngắm pháo hoa, ngắm hoàng hôn rất đẹp mỗi ngày - 360 độ không chắn!
+
++ GIÁ  2.700 tỷ - gồm thuế & phí bên Bán
+   Khách Tiền Mặt có thể thương lượng Giá 💰💰 
++ S1.02 tầng cao 28.19 - 2PN . 1WC . 59m2
+  (đã có SỔ HỒNG, ban công Tây Nam, cửa chính Đông Bắc)
++ View ngoại khu đảm bảo sự riêng tư, hàng xóm KOK nhìn trực diện vào nhà 🙌
++ Bàn giao nhà chất lượng mới 97% & Nội Thất 03 máy lạnh + Bếp gỗ + Rèm cơ bản, thuận tiện thiết kế nhà theo phong cách riêng 😎
++ Nắng sáng chiều, thích hợp trồng nhiều cây xanh phát triển tốt 🍃🍃
+
+Tiện ích đã có gồm:
+- Trường Vinshool mầm non + trường liên cấp 123 
+- Siêu thị Vincom Mega Mall + bệnh viện Vinmec
+- Xe bus điện đi Q1, Q2, và các quận trung tâm
+- Hồ bơi + nhiều sân thể thao tennis + cầu lông + bóng bàn + sân đá banh
+- Công viên ánh sáng 36ha + nhiều công viên cây xanh nội khu 
+",Căn hộ/Chung cư,1,Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Thạnh Mỹ (Quận 9 cũ),Nguyễn Xiển,10.8454,106.81972,59.0,2.0,1.0,5.0,8.0,3.0,6.0,2700000000,"2,7 tỷ",45762711.86440678,2026-07-28 03:53:00.556,2026-07-24 09:03:23,6,active,chotot,https://www.chotot.com/13000/1010/174651042.htm,2026-08-08 08:39:51.679,2026-08-08 08:39:51.679,2026-08-08 08:39:51.679,Thành phố Thủ Đức,Đông Nam,Nội thất đầy đủ,Sổ hồng riêng,5.0,8.0,3.0,6.0,403.4,0,0.9915254237288136,0.9076923076923077,0.3,0.2,2.399217731421121,"{'price': 0.9915254237288136, 'area': 0.9076923076923077, 'segment': 0.3, 'amenity': 0.2}"
+"Nhà đầu tư, 5 tỷ, Quận 7 hoặc Bình Tân",5857,177910834,"Cần bán căn hộ Sky Garden 3, Phú Mỹ Hưng","Bán căn hộ Sky Garden 3 nhà 03 PN, PK, 2WC. nội thất đầy đủ chỉ .. tiện ích gần các siêu thị, trường học, công viên cây xanh mát quanh năm...",Căn hộ/Chung cư,1,Sky Garden 3,Tp Hồ Chí Minh,Quận 7,Phường Tân Phong,Phạm Văn Nghị,10.72911,106.70673,70.0,3.0,2.0,,6.0,2.0,6.0,4999000000,"4,999 tỷ",71414285.71428572,2026-08-05 03:03:32.000,,1,active,chotot,https://www.chotot.com/13000/1010/177910834.htm,2026-08-08 09:15:49.165,2026-08-08 09:15:49.165,2026-08-08 09:15:49.165,Quận 7,missing,Nội thất cơ bản,Sổ hồng riêng,,6.0,2.0,6.0,148.3,1,0.9998,1.0,0.3,0.2,2.4998,"{'price': 0.9998, 'area': 1.0, 'segment': 0.3, 'amenity': 0.2}"
+"Nhà đầu tư, 5 tỷ, Quận 7 hoặc Bình Tân",6272,177404259,🚨 BÁN GẤP CĂN HỘ DOCKLAND Q7 – 69.7M² 2PN 2WC - GIÁ CỰC TỐT,"- Vị trí: Chung cư Dockland - Nguyễn Thị Thập, Tân Phú, Quận 7 (Liền kề Phú Mỹ Hưng, sát bên siêu thị GO!).
+- Diện tích: 69.7m | 2 Phòng ngủ - 2 WC.
+- Đặc điểm: Tầng cao, thiết kế tối ưu, thông thoáng, đón gió tự nhiên. Khu dân cư an ninh 24/7, đầy đủ hồ bơi, gym, khu vui chơi trẻ em.
+- Nội thất: Đầy đủ đồ (Bếp, tủ lạnh, máy giặt, điều hòa, sofa, giường nệm...).
+- Pháp lý: Sổ hồng chính chủ, công chứng ngay.
+- Giá bán: 5.1 tỷ bao thuế phí (Có bớt lộc cho khách thiện chí mua nhanh).
+ Liên hệ Ms. Hà: *** (Hỗ trợ xem nhà linh hoạt).",Căn hộ/Chung cư,1,Docklands Sài Gòn,Tp Hồ Chí Minh,Quận 7,Phường Tân Phú,Nguyễn Thị Thập,10.73685,106.7233,69.7,2.0,,,,,,5100000000,"5,1 tỷ",73170731.70731707,2026-07-15 00:26:00.229,2026-07-13 04:14:20,4,active,chotot,https://www.chotot.com/13000/1010/177404259.htm,2026-08-08 09:17:13.910,2026-08-08 09:17:13.910,2026-08-08 09:17:13.910,Quận 7,missing,,,,,,,148.3,1,0.9756097560975611,0.9957142857142858,0.3,0.2,2.471324041811847,"{'price': 0.9756097560975611, 'area': 0.9957142857142858, 'segment': 0.3, 'amenity': 0.2}"
+"Nhà đầu tư, 5 tỷ, Quận 7 hoặc Bình Tân",5983,177606259,"BÁN GẤP CĂN HỘ 2PN - 2WC DOCKLANDS, Q7 – FULL NỘI THẤT","Đường Nguyễn Thị Thập, Quận 7 – Cạnh GO!, kết nối nhanh Phú Mỹ Hưng và Quận 1.
+- Diện tích: 69.7m² | 2PN - 2WC
+- Tầng cao, thiết kế thoáng, đón ánh sáng tự nhiên.
+- Full nội thất: bếp, tủ lạnh, máy giặt, máy lạnh, sofa, giường… vào ở ngay.
+- Tiện ích: Hồ bơi, gym, sân chơi trẻ em, an ninh 24/7.
+- Sổ hồng chính chủ, công chứng nhanh.
+* Giá bán: 5.1 tỷ bao thuế phí, thương lượng khách thiện chí.
+Liên hệ: Ms. Hà – ***",Căn hộ/Chung cư,1,Docklands Sài Gòn,Tp Hồ Chí Minh,Quận 7,Phường Tân Phú,Nguyễn Thị Thập,10.73685,106.7233,69.7,2.0,2.0,,,,,5100000000,"5,1 tỷ",73170731.70731707,2026-07-24 00:12:01.211,2026-07-22 07:02:31,3,active,chotot,https://www.chotot.com/13000/1010/177606259.htm,2026-08-08 09:16:21.307,2026-08-08 09:16:21.307,2026-08-08 09:16:21.307,Quận 7,missing,,,,,,,148.3,1,0.9756097560975611,0.9957142857142858,0.3,0.2,2.471324041811847,"{'price': 0.9756097560975611, 'area': 0.9957142857142858, 'segment': 0.3, 'amenity': 0.2}"
+"Nhà đầu tư, 5 tỷ, Quận 7 hoặc Bình Tân",5969,177723754,"4.81 tỷ 70m2 đường Nguyễn Lương Bằng, Q.7","Dự án: 
+Thông tin chi tiết: 𝐒𝐏 𝐡𝐢𝐞̂́𝐦 𝐭𝐚̣𝐢 𝐐.𝟕 𝐭𝐫𝐮̣𝐜 𝐜𝐡𝐢́𝐧𝐡 𝐍𝐠𝐮𝐲𝐞̂̃𝐧 𝐋𝐮̛𝐨̛𝐧𝐠 𝐁𝐚̆̀𝐧𝐠 𝐠𝐢𝐚́ 𝐜𝐡𝐢̉ 𝟕𝟓𝐭𝐫/𝐦𝟐.
+📍 Ngay Ga Metro Tân Mỹ Bến Thành - Cần Giờ và kế khu dự án 32ha của Vinhomes. Sau này về Q.1 chỉ 10p. 
+☘️ Tổng giá: 5.3 tỷ/ 70m2 đã vat ( 4.818 tỷ chưa Vat )
+☘️ Ưu đãi:
+- Vòng quay 5-10-15-20-25-100tr
+- Ck mua nhóm sỉ: 0.5-1.5%
+- Thanh toán nhanh 70%: Ck 4%
+- Vay 70% ls 0% 12 tháng
+Liên hệ: Nguyên ***",Căn hộ/Chung cư,1,The Peak Garden,Tp Hồ Chí Minh,Quận 7,Phường Phú Mỹ,Nguyễn Lương Bằng,10.70729,106.73198,70.0,2.0,2.0,,,1.0,,4818000000,"4,818 tỷ",68828571.42857143,2026-08-08 02:54:19.969,2026-07-27 13:12:35,7,active,chotot,https://www.chotot.com/13000/1010/177723754.htm,2026-08-08 09:16:20.074,2026-08-08 09:16:20.074,2026-08-08 09:16:20.074,Quận 7,missing,Không nội thất,,,,1.0,,148.3,1,0.9636,1.0,0.3,0.2,2.4636,"{'price': 0.9636, 'area': 1.0, 'segment': 0.3, 'amenity': 0.2}"
+"Nhà đầu tư, 5 tỷ, Quận 7 hoặc Bình Tân",5790,177852448,Bán căn hộ chung cư Hưng vượng 2 khu đô thị Phú Mỹ Hưng Quận 7 cũ,"Bán căn hộ Lầu 6 blook I ngay cổng vào chung cư. vị trí đẹp phong thủy tốt .
+Diện tích sử dụng net : 71m2
+3 phòng ngủ
+Nhà sạch đẹp thoáng ( hình thật căn hộ ) .
+Nằm ngay khu vực trung tâm sầm uất phố Bùi bằng đoàn , xung quanh tiện ích đầy đủ, dân cư văn minh, có công viên sinh hoạt chung rộng rãi xanh mát, nơi nhiều người nước ngoài lựa chọn sinh sống. Sổ hồng lâu dài .
+Nhà trống .
+Giá quá hợp lý cho một nơi đáng sống như khu đô thị Phú Mỹ Hưng  ",Căn hộ/Chung cư,1,Hưng Vượng 2,Tp Hồ Chí Minh,Quận 7,Phường Tân Phong,Tân Phong,10.73019,106.70033,71.0,3.0,,,3.0,,6.0,4850000000,"4,85 tỷ",68309859.15492958,2026-08-06 08:04:04.841,2026-08-02 08:32:09,8,active,chotot,https://www.chotot.com/13000/1010/177852448.htm,2026-08-08 09:15:43.531,2026-08-08 09:15:43.531,2026-08-08 09:15:43.531,Quận 7,missing,,Sổ hồng riêng,,3.0,,6.0,148.3,1,0.956338028169014,0.9857142857142858,0.3,0.2,2.4420523138832997,"{'price': 0.956338028169014, 'area': 0.9857142857142858, 'segment': 0.3, 'amenity': 0.2}"
+"Người mua cao cấp, 7 tỷ, Thủ Đức hoặc Quận 7",3752,177765164,"Căn hộ quận 2 mới ra mắt rất đẹp chỉ 20% 1,4 tỷ sở hữu căn hộ lâu dài","MỞ BÁN chúng cư trong biệt thự GLADIA HEIGHTS SỞ HỮU LÂU DÀI 🌹
+
+📣 🔥 GLADIA HEIGHTS – căn hộ đầu tư ĐẦY TIỀM NĂNG 🔥
+
+Cập nhật những thông tin mới nhất về  căn hộ dự án Gladia Heights:
+
+💎 Giá dự kiến: 86 triệu/m²
+
+📐 Diện tích đa dạng: từ 90m² đến 
+
+🏢 Trần cao 4,5m – tối ưu không gian kinh doanh
+
+🏗️ Thiết kế 01 tầng, linh hoạt khai thác nhiều mô hình
+
+📜 Sở hữu lâu dài
+
+Chủ đầu tư sẽ làm việc và có các thương hiệu lớn về vận hành một vài căn, khách hàng mua trúng những căn này thì như trúng số nhé
+
+🎁 Ưu đãi đặc biệt: LH ***
+
+✅ Khách booking Shophouse vẫn được hưởng chiết khấu 2% booking sớm
+
+🚀 Gladia Heights không chỉ là sản phẩm sở hữu lâu dài mà còn là cơ hội đón đầu tiềm năng kinh doanh và gia tăng giá trị  tăng giá cho nhà đầu tư chỉ thanh toán 20% sở hữu ngay. Được tặng 12 tháng phí quản lý, tặng gói phát triển thể chất toàn diện chỉ dành riêng cho cư dân ",Căn hộ/Chung cư,1,Gladia Heights,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Cát Lái (Quận 2 cũ),Đường Võ Chí Công,10.777802,106.78437,90.0,2.0,,,,,,7700000000,"7,7 tỷ",85555555.55555555,2026-07-29 09:30:45.000,,12,active,chotot,https://www.chotot.com/13000/1010/177765164.htm,2026-08-08 08:41:21.197,2026-08-08 08:41:21.197,2026-08-08 08:41:21.197,Thành phố Thủ Đức,missing,,,,,,,403.4,1,0.9611111111111112,0.9411764705882353,0.0,0.2,2.1022875816993465,"{'price': 0.9611111111111112, 'area': 0.9411764705882353, 'segment': 0.0, 'amenity': 0.2}"
+"Người mua cao cấp, 7 tỷ, Thủ Đức hoặc Quận 7",3575,177766136,"BÁN CĂN HỘ VÍP CDT VINHOMES - OPUS ONE - 2PN+ 7,82 TỶ, VIEW BỂ BƠI, CV","CĂN HỘ VÍP MỚI MỞ BÁN CDT VINHOMES - OPUS ONE - BIỂU TƯỢNG CĂN HỘ HẠNG SANG TẠI VINHOMES GRAND PARK
+
+- View trực diện, Hồ Bơi vô cực 3 tầng à Công viên Ánh Sáng Vinhomes Grand Park + 36 ha.
+
+BÁN Căn hộ chung cư tại The Opus One - Vinhomes Grand Park, phường Long Bình, Hồ Chí Minh, trước đây quận 9, Hồ Chí Minh là một lựa chọn lý tưởng cho những ai tìm kiếm không gian sống hiện đại và tiện nghi.
+
+- Diện tích: 85m².
+- Số phòng ngủ: 2PN+
+- Số toilet: 2WC.
+- Nội thất: Cơ bản.
+- Căn Góc.
+- Giá: 7.82ỷ VND.
+
+Điểm đặc sắc:
+Căn hộ nằm trong dự án The Opus One - Vinhomes Grand Park, nổi bật với thiết kế hiện đại và tiện ích đẳng cấp, mang đến trải nghiệm sống hoàn hảo. Khu vực này còn có nhiều công viên nội khu, tạo không gian xanh mát và thoáng đãng cho cư dân.
+
+Địa điểm tiện ích xung quanh.
+- View trực diện, Hồ Bơi vô cực 3 tầng à Công viên Ánh Sáng Vinhomes Grand Park + 36 ha.
+- Bên cạnh Vincom.
+- Quảng Trường Eagle.
+Liên hệ Ngọc Linh đt/zalo *** chuyên giỏ hàng CDT tại Vinhomes Grand Park các phân khu - The Opus One, The Beverly, The Beverly Solari, The Rainbow, The Origami, The GloryHeights",Căn hộ/Chung cư,1,Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Thạnh Mỹ (Quận 9 cũ),Nguyễn Xiển,10.8454,106.81972,85.0,2.0,2.0,4.0,3.0,3.0,5.0,7820000000,"7,82 tỷ",92000000.0,2026-07-29 10:13:45.000,,4,active,chotot,https://www.chotot.com/13000/1010/177766136.htm,2026-08-08 08:39:53.399,2026-08-08 08:39:53.399,2026-08-08 08:39:53.399,Thành phố Thủ Đức,Bắc,Nội thất đầy đủ,Sổ hồng chung,4.0,3.0,3.0,5.0,403.4,3,0.8828571428571429,1.0,0.0,0.2,2.082857142857143,"{'price': 0.8828571428571429, 'area': 1.0, 'segment': 0.0, 'amenity': 0.2}"
+"Người mua cao cấp, 7 tỷ, Thủ Đức hoặc Quận 7",4100,177629719,OS 2PN 80m2 trực diện Vin Wonder - 6ty2 - nhận nhà ngay,"𝐓𝐡𝐞 Opus One 🔥🔥🔥
+🔥2PN (80m²) VIEW VIN WONDER🔥
+✅Diện tích: (80m²).
+✅Vị trí & Tầng: cụm OS , tầng CAO
+✅Tầm nhìn: trực diện công viên Vin Wonder
+✅Hướng ban công : Đông Bắc đón gió tránh nắng.
+✅Hiện trạng bàn giao: Chủ đầu tư hoàn thiện cơ bản sẵn máy lạnh âm trần.
+📈 THÔNG TIN ĐẦU TƯ & PHÁP LÝ CHI TIẾT
+✅Pháp lý: Hợp đồng mua bán (Công chứng sang tên ngay trong ngày).
+✅Giá bán: 6tỷ2.
+✅Xem nhà: Hỗ trợ xem thực tế 24/7 (linh hoạt theo lịch của anh/chị).
+✅Cam kết từ Uy Nam: Em Nam cam kết hỗ trợ anh/chị từ khâu thủ tục, vận hành, khai thác dòng tiền cho đến khi chốt lãi. Uy tín - Tận tâm - Trách nhiệm!
+📦 GIỎ HÀNG ĐỘC QUYỀN - ĐA DẠNG CĂN GIÁ TỐT
+Ngoài ra, giỏ hàng bên em đang nắm giữ đa dạng căn hộ từ 1PN, 2PN đến 3PN tại Vinhomes Grand Park với mức giá ngộp cắt lỗ, view trực diện công viên/hồ bơi siêu đẹp.
+📞 Liên hệ ngay Hotline/Zalo để tư vấn và xem nhà:
+*** (Em Uy Nam)",Căn hộ/Chung cư,1,The Beverly - Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Bình (Quận 9 cũ),"Nguyễn Xiển - Phước Thiện, phường Long Bình, TP. Thủ Đức, TP.HCM",10.844467,106.8472,80.0,2.0,2.0,,5.0,3.0,5.0,6200000000,"6,2 tỷ",77500000.0,2026-07-23 07:03:16.000,,12,active,chotot,https://www.chotot.com/13000/1010/177629719.htm,2026-08-08 08:42:06.276,2026-08-08 08:42:06.276,2026-08-08 08:42:06.276,Thành phố Thủ Đức,missing,Nội thất đầy đủ,Sổ hồng chung,,5.0,3.0,5.0,403.4,1,0.9410714285714286,0.9411764705882353,0.0,0.2,2.082247899159664,"{'price': 0.9410714285714286, 'area': 0.9411764705882353, 'segment': 0.0, 'amenity': 0.2}"
+"Người mua cao cấp, 7 tỷ, Thủ Đức hoặc Quận 7",3628,177602057,"Bán căn Góc, view siêu đỉnh Opus One- Căn Hộ 2PN+ Giá chỉ 7.827 tỷ.","CĂN HỘ VÍP MỚI MỞ BÁN  CDT VINHOMES - OPUS ONE - BIỂU TƯỢNG CĂN HỘ HẠNG SANG TẠI VINHOMES GRAND PARK
+
+BÁN Căn hộ chung cư tại The Opus One - Vinhomes Grand Park, phường Long Bình, Hồ Chí Minh, trước đây quận 9, Hồ Chí Minh là một lựa chọn lý tưởng cho những ai tìm kiếm không gian sống hiện đại và tiện nghi.
+
+- Diện tích: 85m².
+- Số phòng ngủ: 2PN+
+- Số toilet: 2WC.
+- Nội thất: Cơ bản.
+- Căn Góc.
+- Giá: 7.82ỷ VND.
+
+Điểm đặc sắc:
+Căn hộ nằm trong dự án The Opus One - Vinhomes Grand Park, nổi bật với thiết kế hiện đại và tiện ích đẳng cấp, mang đến trải nghiệm sống hoàn hảo. Khu vực này còn có nhiều công viên nội khu, tạo không gian xanh mát và thoáng đãng cho cư dân.
+
+Địa điểm tiện ích xung quanh.
+- View trực diện, Hồ Bơi vô cực 3 tầng à  Công viên Ánh Sáng  Vinhomes Grand Park + 36 ha.
+- Bên cạnh Vincom.
+- Quảng Trường Eagle.
+Liên hệ Ngọc Linh đt/zalo *** chuyên giỏ hàng CDT tại Vinhomes Grand Park các phân khu - The Opus One, The Beverly, The Beverly Solari, The Rainbow, The Origami, The GloryHeights
+",Căn hộ/Chung cư,1,Vinhomes Grand Park,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường Long Thạnh Mỹ (Quận 9 cũ),Nguyễn Xiển,10.8454,106.81972,85.0,2.0,2.0,,6.0,3.0,5.0,7827000000,"7,827 tỷ",92082352.94117647,2026-07-22 08:20:28.259,,3,active,chotot,https://www.chotot.com/13000/1010/177602057.htm,2026-08-08 08:39:58.339,2026-08-08 08:39:58.339,2026-08-08 08:39:58.339,Thành phố Thủ Đức,missing,Nội thất đầy đủ,Sổ hồng chung,,6.0,3.0,5.0,403.4,0,0.8818571428571429,1.0,0.0,0.2,2.081857142857143,"{'price': 0.8818571428571429, 'area': 1.0, 'segment': 0.0, 'amenity': 0.2}"
+"Người mua cao cấp, 7 tỷ, Thủ Đức hoặc Quận 7",3745,175634173,"BÁN CĂN GÓC 2PN, CC CANTAVIL, GIÁ 6.1 TỶ 🔺 GIA TỐT","Bán căn hộ Cantavil An Phú Quận 2 
+
+💥 75m2, 2pn, 1wc, 2 ban công, giá 6.1 tỷ
+💥 80m2, 3pn, 1wc, giá 7 tỷ
+💥 98m2, 3pn, 2wc, giá 8.3 tỷ
+💥 120, 3pn, 2wc, giá 8.6 tỷ
+💥 150m2, 3pn, 2wc, giá 9.7 tỷ
+
+Giá trên có bao gồm thuế phí bên bán rồi ạ
+Sát bên trung tâm thương mại, siêu thị Top Market
+Nhà vuông vức, ban công thoáng mát, yên tĩnh
+
+☎️ LH: *** - Hồng Oanh để xem nhà và hình thực tế căn hộ ạ",Căn hộ/Chung cư,1,Cantavil An Phú - Cantavil Premier,Tp Hồ Chí Minh,Thành phố Thủ Đức,Phường An Phú (Quận 2 cũ),Xa Lộ Hà Nội,10.80247,106.74596,75.0,2.0,,,,,6.0,6100000000,"6,1 tỷ",81333333.33333333,2026-07-27 08:04:58.000,,4,active,chotot,https://www.chotot.com/13000/1010/175634173.htm,2026-08-08 08:41:20.733,2026-08-08 08:41:20.733,2026-08-08 08:47:36.454,Thành phố Thủ Đức,missing,,Sổ hồng riêng,,,,6.0,403.4,1,0.9876190476190475,0.8823529411764706,0.0,0.2,2.069971988795518,"{'price': 0.9876190476190475, 'area': 0.8823529411764706, 'segment': 0.0, 'amenity': 0.2}"

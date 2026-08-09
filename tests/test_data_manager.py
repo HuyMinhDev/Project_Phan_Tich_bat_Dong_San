@@ -19,6 +19,21 @@ def test_load_csv_returns_dataframe(tmp_path: Path):
     assert len(df) == 2
 
 
+def test_load_xlsx_returns_dataframe(tmp_path: Path):
+    """Kiểm tra hỗ trợ đọc .xlsx."""
+    pytest.importorskip("openpyxl")
+    from src.data_manager import PropertyDataManager
+
+    xlsx_path = Path("data/raw/real_estate_apartment.xlsx")
+    if not xlsx_path.exists():
+        pytest.skip("File xlsx không tồn tại")
+    mgr = PropertyDataManager(xlsx_path)
+    df = mgr.load_raw()
+    assert len(df) > 0
+    assert "listing_id" in df.columns
+    assert "district" in df.columns
+
+
 def test_load_raw_missing_file_raises(tmp_path: Path):
     from src.data_manager import PropertyDataManager
 
@@ -27,27 +42,33 @@ def test_load_raw_missing_file_raises(tmp_path: Path):
         mgr.load_raw()
 
 
-def test_clean_pipeline_runs(tmp_path: Path):
+def test_clean_pipeline_runs_with_apartment_schema():
+    """Pipeline cleaner chạy với schema căn hộ: district text + direction số."""
     from src.data_manager import PropertyDataManager
 
-    csv = tmp_path / "raw.csv"
-    csv.write_text(
-        "listing_id,district,house_direction,total_price,area_m2,bedrooms\n"
-        "1,1,Đông,8000000000,80,3\n"
-        "2,Bình Thạnh,Đông - Nam,5000000000,60,2\n"
-        "3,Củ Chi,Tây,8000000000,70,3\n"
-        "4,1,Đông,50000000,80,50\n",
-        encoding="utf-8",
-    )
-    mgr = PropertyDataManager(csv)
-    raw = mgr.load_raw()
-    cleaned, log, errors = mgr.clean()
-    assert "district_clean" in cleaned.columns
-    assert "direction_clean" in cleaned.columns
-    assert "price_per_m2" in cleaned.columns
-    assert len(cleaned) == 3  # dòng 4 drop vì giá thấp
-    assert len(log) >= 1
-    assert isinstance(errors, list)
+    # Dùng fixture inline: tạo CSV tạm có schema căn hộ
+    import tempfile
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False, mode="w", encoding="utf-8") as f:
+        f.write(
+            "listing_id,district,direction,total_price,area_m2,bedrooms\n"
+            "1,Quận Bình Thạnh,5,8000000000,80,3\n"
+            "2,Thành phố Thủ Đức,1,5000000000,60,2\n"
+            "3,Quận 7,8,8000000000,70,3\n"
+            "4,Quận 12,2,50000000,80,50\n",
+        )
+        tmp_path = f.name
+
+    try:
+        mgr = PropertyDataManager(tmp_path)
+        cleaned, log, errors = mgr.clean()
+        assert "district_clean" in cleaned.columns
+        assert "direction_clean" in cleaned.columns
+        assert "price_per_m2" in cleaned.columns
+        assert len(cleaned) == 3  # dòng 4 drop vì giá thấp + bedrooms outlier
+        assert len(log) >= 1
+        assert isinstance(errors, list)
+    finally:
+        Path(tmp_path).unlink(missing_ok=True)
 
 
 def test_merge_amenities_left_join():
@@ -57,15 +78,15 @@ def test_merge_amenities_left_join():
     listings = pd.DataFrame(
         {
             "listing_id": [1, 2],
-            "district_clean": ["Quận 1", "Quận 2"],
-            "ward": ["Bến Nghé", "Tân Định"],
+            "district_clean": ["Quận 7", "Quận 2"],
+            "ward": ["Tân Mỹ", "Tân Định"],
             "price_per_m2": [100e6, 80e6],
         }
     )
     amenities = pd.DataFrame(
         {
-            "district_clean": ["Quận 1", "Quận 2"],
-            "ward": ["Bến Nghé", "Tân Định"],
+            "district_clean": ["Quận 7", "Quận 2"],
+            "ward": ["Tân Mỹ", "Tân Định"],
             "amenity_score": [5.0, 3.0],
         }
     )
@@ -82,15 +103,15 @@ def test_merge_amenities_left_join_keeps_unmatched():
     listings = pd.DataFrame(
         {
             "listing_id": [1, 2],
-            "district_clean": ["Quận 1", "Quận 99"],
-            "ward": ["Bến Nghé", "Unknown"],
+            "district_clean": ["Quận 7", "Quận 99"],
+            "ward": ["Tân Mỹ", "Unknown"],
             "price_per_m2": [100e6, 80e6],
         }
     )
     amenities = pd.DataFrame(
         {
-            "district_clean": ["Quận 1"],
-            "ward": ["Bến Nghé"],
+            "district_clean": ["Quận 7"],
+            "ward": ["Tân Mỹ"],
             "amenity_score": [5.0],
         }
     )

@@ -2,8 +2,12 @@
 # Chạy toàn bộ dự án: pipeline + 4 notebooks + tests
 # Usage: ./run_all.sh  hoặc  bash run_all.sh
 
-set -e  # dừng nếu có lỗi
+set -e
 cd "$(dirname "$0")"
+
+# Set env var để joblib/loky không cố detect CPU cores (gây warning/có thể
+# khiến kernel jupyter bị Abort trap trên một số sandbox).
+export LOKY_MAX_CPU_COUNT=${LOKY_MAX_CPU_COUNT:-4}
 
 echo "========================================="
 echo " 1/3  Running unit tests"
@@ -20,24 +24,7 @@ echo ""
 echo "========================================="
 echo " 3/3  Executing 4 notebooks"
 echo "========================================="
-python3 - <<'PY'
-import nbformat
-from nbclient import NotebookClient
-
-notebooks = [
-    "01_problem_and_data.ipynb",
-    "02_collection_and_cleaning.ipynb",
-    "03_eda.ipynb",
-    "04_machine_learning.ipynb",
-]
-for nb_file in notebooks:
-    print(f"--- {nb_file} ---")
-    nb = nbformat.read(f"notebooks/{nb_file}", as_version=4)
-    client = NotebookClient(nb, timeout=180, kernel_name="python3")
-    client.execute()
-    nbformat.write(nb, f"notebooks/{nb_file.replace('.ipynb', '_executed.ipynb')}")
-    print("  OK")
-PY
+python3 scripts/run_notebooks.py
 
 echo ""
 echo "========================================="

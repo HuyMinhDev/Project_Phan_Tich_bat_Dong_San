@@ -1,14 +1,20 @@
-"""Các quy tắc chuẩn hóa dữ liệu bất động sản nhà phố TP.HCM.
+"""Các quy tắc chuẩn hóa dữ liệu BĐS căn hộ/chung cư TP.HCM.
 
-Áp dụng cho `real_estate_with_price_per_m2.csv`:
-1. `district` — giá trị dạng số "1".."12" → "Quận 1".."Quận 12"; các quận nội thành
-   không có prefix → thêm "Quận "; các huyện ngoại thành → thêm "Huyện ".
-2. `house_direction` — 12 giá trị bao gồm dạng ghép "Đông - Nam" → chuẩn về 8 hướng
-   chính bằng cách bỏ dấu "-" và ghép hai phần (ví dụ "Đông - Nam" → "Đông Nam").
-3. `total_price` — bỏ NaN và bỏ giá trị < 100 triệu (chắc chắn sai).
-4. `area_m2` — bỏ dòng có diện tích < 5m² hoặc > 1000m² (outlier rõ ràng).
-5. `bedrooms` — bỏ dòng có số phòng > 15.
-6. `price_per_m2` — tính lại từ `total_price / area_m2` để đảm bảo nhất quán.
+Áp dụng cho `real_estate_apartment.xlsx` (schema chotot crawl):
+1. `district` — data đã ở dạng text chuẩn ("Quận Bình Thạnh"); pass-through
+   sau khi strip. Nếu cần map "Thành phố Thủ Đức" → giữ nguyên (đây là tên
+   chính thức sau sáp nhập).
+2. `direction` (mã số 1..8) → decode về 8 hướng chính tiếng Việt.
+3. `balcony_direction` (mã số 1..8) → cùng cách decode.
+4. `furnishing_status` (mã 1..4) → giữ mã (NaN OK), chỉ thêm tên gợi ý
+   qua `_FURNISHING_LABELS`.
+5. `legal_status` (mã 1,2,4,5,6) → giữ mã, decode nhãn qua `_LEGAL_LABELS`.
+6. `total_price` — bỏ NaN và giá trị < 100 triệu (chắc chắn sai).
+7. `area_m2` — bỏ dòng có diện tích < 10m² hoặc > 500m² (outlier rõ ràng
+   cho căn hộ; data đã có 1 tin 1323m² — outlier).
+8. `bedrooms` — bỏ dòng có số phòng > 10 (căn hộ hiếm khi > 10 phòng).
+9. `price_per_m2` — tính lại từ `total_price / area_m2` để đảm bảo nhất
+   quán (đề phòng data thô có giá/m² lệch).
 """
 
 from __future__ import annotations
@@ -16,78 +22,105 @@ from __future__ import annotations
 import re
 from typing import Optional
 
+import numpy as np
 import pandas as pd
 
 
-_NUMBER_TO_QUAN = {str(i): f"Quận {i}" for i in range(1, 13)}
-
-# Các quận nội thành (không có số, không có "Quận"/"Huyện" prefix)
-_INNER_QUAN = {
-    "Bình Thạnh",
-    "Tân Bình",
-    "Gò Vấp",
-    "Phú Nhuận",
-    "Tân Phú",
-    "Bình Tân",
+# Map mã hướng 1..8 → tên hư�ng chuẩn
+_DIRECTION_CODE_TO_NAME = {
+    1: "Đông",
+    2: "Tây",
+    3: "Nam",
+    4: "Bắc",
+    5: "Đông Nam",
+    6: "Tây Nam",
+    7: "Đông Bắc",
+    8: "Tây Bắc",
 }
 
-# Các huyện ngoại thành
-_OUTER_HUYEN = {
-    "Bình Chánh",
-    "Củ Chi",
-    "Cần Giờ",
-    "Hóc Môn",
-    "Nhà Bè",
-    "Thủ Đức",
+# Nhãn tình trạng nội thất (mapping dựa trên phổ biến trên chotot)
+_FURNISHING_LABELS = {
+    1: "Không nội thất",
+    2: "Nội thất cơ bản",
+    3: "Nội thất đầy đủ",
+    4: "Nội thất cao cấp",
 }
 
-# Hướng đã chuẩn (để kiểm tra)
-_KNOWN_DIRECTIONS = {
-    "Đông", "Tây", "Nam", "Bắc",
-    "Đông Nam", "Tây Nam", "Đông Bắc", "Tây Bắc",
+# Nhãn tình trạng pháp lý (mã 3 vắng — có thể là đang cập nhật)
+_LEGAL_LABELS = {
+    1: "Đang cập nhật",
+    2: "Sổ hồng lâu dài",
+    4: "Hợp đồng mua bán",
+    5: "Sổ hồng chung",
+    6: "Sổ hồng riêng",
 }
-
-_DIR_SPLIT_RE = re.compile(r"\s*[-–—]\s*")
 
 
 def normalize_district(value: Optional[str]) -> Optional[str]:
-    """Trả về tên quận/huyện chuẩn. None nếu đầu vào rỗng."""
-    if value is None:
-        return None
-    s = str(value).strip()
-    if not s:
-        return None
-    if s in _NUMBER_TO_QUAN:
-        return _NUMBER_TO_QUAN[s]
-    if s.startswith("Quận ") or s.startswith("Huyện ") or s.startswith("TP. "):
-        return s
-    if s in _INNER_QUAN:
-        return f"Quận {s}"
-    if s in _OUTER_HUYEN:
-        return f"Huyện {s}"
-    return s
+    """District đã chuẩn sẵn trong xlsx. Pass-through + strip.
 
-
-def normalize_direction(value: Optional[str]) -> Optional[str]:
-    """Chuẩn hóa hướng nhà về 8 hướng chính.
-
-    "Đông - Nam" → "Đông Nam", "Tây" → "Tây", None → None.
-    Nếu giá trị đã chuẩn (không có dấu "-") thì trả về nguyên.
+    Trả về None nếu đầu vào rỗng/NaN.
     """
     if value is None:
         return None
+    if isinstance(value, float) and pd.isna(value):
+        return None
     s = str(value).strip()
-    if not s:
+    if not s or s.lower() in {"nan", "none", "null"}:
         return None
-    if s in _KNOWN_DIRECTIONS:
-        return s
-    parts = _DIR_SPLIT_RE.split(s)
-    parts = [p.strip() for p in parts if p.strip()]
-    if not parts:
+    return s
+
+
+def normalize_direction(value) -> Optional[str]:
+    """Decode mã hướng 1..8 → tên hướng chính.
+
+    Chấp nhận cả float (1.0) và int (1) và None. Trả về None nếu
+    giá trị NaN hoặc không nằm trong map.
+    """
+    if value is None:
         return None
-    if len(parts) == 1:
-        return parts[0]
-    return " ".join(parts)
+    try:
+        if pd.isna(value):
+            return None
+    except (TypeError, ValueError):
+        pass
+    try:
+        code = int(float(value))
+    except (TypeError, ValueError):
+        return None
+    return _DIRECTION_CODE_TO_NAME.get(code)
+
+
+def decode_furnishing(value) -> Optional[str]:
+    """Decode mã furnishing_status 1..4 → nhãn tiếng Việt. None nếu NaN/không rõ."""
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+    except (TypeError, ValueError):
+        pass
+    try:
+        code = int(float(value))
+    except (TypeError, ValueError):
+        return None
+    return _FURNISHING_LABELS.get(code)
+
+
+def decode_legal(value) -> Optional[str]:
+    """Decode mã legal_status 1,2,4,5,6 → nhãn tiếng Việt. None nếu NaN/không rõ."""
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+    except (TypeError, ValueError):
+        pass
+    try:
+        code = int(float(value))
+    except (TypeError, ValueError):
+        return None
+    return _LEGAL_LABELS.get(code)
 
 
 def filter_outliers(
@@ -95,10 +128,10 @@ def filter_outliers(
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Lọc bỏ các dòng outlier và trả về (cleaned_df, log_df).
 
-    Quy tắc:
-    - area_m2 < 5 hoặc > 1000 → drop
+    Quy tắc (điều chỉnh cho căn hộ):
+    - area_m2 < 10 hoặc > 500  → drop (căn hộ hiếm khi < 10m² hoặc > 500m²)
     - total_price < 100_000_000 → drop (chắc chắn sai)
-    - bedrooms > 15 → drop
+    - bedrooms > 10            → drop
 
     log_df có cột: listing_id, issue_type, original_value, decision.
     """
@@ -106,12 +139,12 @@ def filter_outliers(
     keep_mask = pd.Series(True, index=df.index)
 
     if "area_m2" in df.columns:
-        bad = (df["area_m2"] < 5) | (df["area_m2"] > 1000)
+        bad = (df["area_m2"] < 10) | (df["area_m2"] > 500)
         for idx in df.index[bad]:
             log_rows.append(
                 {
                     "listing_id": int(df.at[idx, "listing_id"]) if "listing_id" in df.columns else -1,
-                    "issue_type": "area_too_small_or_large",
+                    "issue_type": "area_out_of_range",
                     "original_value": float(df.at[idx, "area_m2"]),
                     "decision": "drop",
                 }
@@ -132,7 +165,7 @@ def filter_outliers(
         keep_mask &= ~bad
 
     if "bedrooms" in df.columns:
-        bad = df["bedrooms"] > 15
+        bad = df["bedrooms"] > 10
         for idx in df.index[bad & keep_mask]:
             log_rows.append(
                 {
@@ -149,17 +182,25 @@ def filter_outliers(
 
 
 def recompute_price_per_m2(df: pd.DataFrame) -> pd.DataFrame:
-    """Tính lại `price_per_m2 = total_price / area_m2` (ghi đè cột cũ)."""
+    """Tính lại `price_per_m2 = total_price / area_m2` (ghi đè cột cũ).
+
+    Nếu total_price hoặc area_m2 NaN thì giữ price_per_m2 = NaN.
+    """
     out = df.copy()
     if "total_price" in out.columns and "area_m2" in out.columns:
-        out["price_per_m2"] = out["total_price"] / out["area_m2"]
+        area = out["area_m2"]
+        # Chia an toàn: chỗ area <= 0 hoặc NaN → kết quả NaN
+        with np.errstate(divide="ignore", invalid="ignore"):
+            new_ppm2 = out["total_price"].astype(float) / area.astype(float)
+        new_ppm2 = new_ppm2.where(area > 0)
+        out["price_per_m2"] = new_ppm2
     return out
 
 
 def clean_dataframe(
     df: pd.DataFrame,
 ) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
-    """Pipeline làm sạch: chuẩn hóa + lọc outlier + tính lại price_per_m2.
+    """Pipeline làm sạch cho căn hộ: chuẩn hóa + lọc outlier + tính lại price_per_m2.
 
     Trả về: (cleaned_df, cleaning_log, errors).
     `errors` là list[str] mô tả vấn đề cấu trúc (không phải dòng dữ liệu).
@@ -168,6 +209,7 @@ def clean_dataframe(
 
     out = df.copy()
 
+    # 1. district
     if "district" in out.columns:
         out["district_clean"] = out["district"].apply(normalize_district)
         n_missing = int(out["district_clean"].isna().sum())
@@ -177,12 +219,53 @@ def clean_dataframe(
         errors.append("Thiếu cột 'district'")
         out["district_clean"] = None
 
-    if "house_direction" in out.columns:
-        out["direction_clean"] = out["house_direction"].apply(normalize_direction)
+    # 2. direction (số 1..8 → text)
+    if "direction" in out.columns:
+        out["direction_clean"] = out["direction"].apply(normalize_direction)
     else:
-        errors.append("Thiếu cột 'house_direction'")
+        errors.append("Thiếu cột 'direction'")
         out["direction_clean"] = None
 
+    # 3. furnishing + legal — chỉ thêm cột nhãn nếu có mã
+    if "furnishing_status" in out.columns:
+        out["furnishing_label"] = out["furnishing_status"].apply(decode_furnishing)
+    if "legal_status" in out.columns:
+        out["legal_label"] = out["legal_status"].apply(decode_legal)
+
+    # 4. Copy mã categorical dạng số vào cleaned (cho ML dùng numeric)
+    # direction (1..8) — nếu có cột gốc
+    if "direction" in out.columns:
+        out["direction_code"] = out["direction"]
+    else:
+        out["direction_code"] = np.nan
+    # balcony_direction (1..8)
+    if "balcony_direction" in out.columns:
+        out["balcony_code"] = out["balcony_direction"]
+    else:
+        out["balcony_code"] = np.nan
+    # furnishing_status (1..4)
+    if "furnishing_status" in out.columns:
+        out["furnishing_code"] = out["furnishing_status"]
+    else:
+        out["furnishing_code"] = np.nan
+    # legal_status (1,2,4,5,6)
+    if "legal_status" in out.columns:
+        out["legal_code"] = out["legal_status"]
+    else:
+        out["legal_code"] = np.nan
+    # apartment_type (1..6)
+    if "apartment_type" in out.columns:
+        out["apartment_type"] = out["apartment_type"]
+    else:
+        out["apartment_type"] = np.nan
+    # image_count (int) — giữ nguyên
+    if "image_count" in out.columns:
+        out["image_count"] = out["image_count"]
+    else:
+        out["image_count"] = np.nan
+
+    # 5. Lọc outlier + recompute price_per_m2
     cleaned, log = filter_outliers(out)
     cleaned = recompute_price_per_m2(cleaned)
+
     return cleaned, log, errors

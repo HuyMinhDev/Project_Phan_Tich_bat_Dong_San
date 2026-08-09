@@ -1,9 +1,9 @@
-"""PropertyDataManager — quản lý dữ liệu bất động sản.
+"""PropertyDataManager — quản lý dữ liệu bất động sản căn hộ/chung cư.
 
 Bao gồm:
-- `load_raw()` — đọc CSV thô từ đường dẫn đã khởi tạo.
-- `clean()` — áp dụng pipeline làm sạch (chuẩn hóa district/direction, lọc
-  outlier, tính lại price_per_m2), trả về (cleaned_df, log_df, errors).
+- `load_raw()` — đọc CSV hoặc XLSX (theo đuôi file) từ đường dẫn đã khởi tạo.
+- `clean()` — áp dụng pipeline làm sạch (chuẩn hóa district + direction,
+  lọc outlier, tính lại price_per_m2), trả về (cleaned_df, log_df, errors).
 - `merge_amenities(listings, amenities)` — left-join theo (district_clean, ward).
 - `save_cleaned(...)` — ghi CSV + log + error_log.txt.
 """
@@ -24,7 +24,12 @@ class PropertyDataManager:
     def load_raw(self) -> pd.DataFrame:
         if not self.raw_path.exists():
             raise FileNotFoundError(f"Không tìm thấy file: {self.raw_path}")
-        return pd.read_csv(self.raw_path)
+        suffix = self.raw_path.suffix.lower()
+        if suffix == ".csv":
+            return pd.read_csv(self.raw_path)
+        if suffix in {".xlsx", ".xls"}:
+            return pd.read_excel(self.raw_path)
+        raise ValueError(f"Định dạng file không hỗ trợ: {suffix} (chỉ .csv, .xlsx, .xls)")
 
     def clean(self) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
         df = self.load_raw()

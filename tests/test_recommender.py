@@ -6,11 +6,13 @@ import pandas as pd
 
 
 def _make_listings():
+    """Fixture 6 căn hộ tại 4 quận (trong phạm vi data căn hộ)."""
     return pd.DataFrame(
         {
             "listing_id": [1, 2, 3, 4, 5, 6],
             "district_clean": [
-                "Quận 1", "Quận 1", "Quận 2", "Quận 7", "Quận 7", "Huyện Củ Chi",
+                "Quận 7", "Quận 7", "Thành phố Thủ Đức", "Quận Bình Thạnh",
+                "Quận Bình Thạnh", "Quận Gò Vấp",
             ],
             "ward": ["A", "A", "B", "Tân Mỹ", "Tân Phong", "X"],
             "total_price": [10e9, 5e9, 8e9, 4e9, 6e9, 1.5e9],
@@ -37,12 +39,6 @@ def test_recommend_filters_by_budget():
     )
     ids = recs["listing_id"].tolist()
     # budget 6e9 ± 20% = [4.8e9, 7.2e9]; bedrooms 2 ± 1 = [1, 3]
-    #   listing 1: 10e9, BR 3 → fail budget    (loại)
-    #   listing 2: 5e9, BR 2 → pass            (giữ)
-    #   listing 3: 8e9, BR 3 → fail budget    (loại)
-    #   listing 4: 4e9, BR 2 → fail budget    (loại)
-    #   listing 5: 6e9, BR 3 → pass            (giữ)
-    #   listing 6: 1.5e9, BR 2 → fail budget  (loại)
     assert 1 not in ids and 3 not in ids and 4 not in ids and 6 not in ids
     assert 2 in ids and 5 in ids
 
@@ -59,15 +55,8 @@ def test_recommend_returns_top_k():
         preferred_districts=[],
         top_k=3,
     )
-    # budget 10e9 ± 20% = [8e9, 12e9]; BR 3 ± 1 = [2, 4]
-    #   listing 1: 10e9, BR 3 → pass
-    #   listing 2: 5e9, BR 2 → fail budget
-    #   listing 3: 8e9, BR 3 → pass (boundary)
-    #   listing 5: 6e9, BR 3 → fail budget
-    #   các dòng khác fail budget
-    # → còn 2 ứng viên, top_k=3 vẫn chỉ trả 2
     assert len(recs) == 2
-    assert recs["listing_id"].tolist() == [1, 3]  # theo sort score_total
+    assert recs["listing_id"].tolist() == [1, 3]
 
 
 def test_recommend_prefers_preferred_districts():
@@ -79,11 +68,11 @@ def test_recommend_prefers_preferred_districts():
         budget_vnd=10e9,
         target_bedrooms=3,
         target_area_m2=75.0,
-        preferred_districts=["Quận 1"],
+        preferred_districts=["Quận 7"],
         top_k=3,
     )
     districts = recs["district_clean"].tolist()
-    assert all(d == "Quận 1" for d in districts)
+    assert all(d == "Quận 7" for d in districts)
 
 
 def test_recommend_uses_segment_bonus():
@@ -92,7 +81,6 @@ def test_recommend_uses_segment_bonus():
     listings = _make_listings()
     eng = RecommendationEngine()
 
-    # Yêu cầu cụm 1, budget vừa đủ để cluster-1 dòng pass filter
     recs_a = eng.recommend(
         listings,
         budget_vnd=7e9,
@@ -135,10 +123,27 @@ def test_recommend_empty_when_no_match():
     eng = RecommendationEngine()
     recs = eng.recommend(
         _make_listings(),
-        budget_vnd=100e6,  # budget rất nhỏ → không match dòng nào
+        budget_vnd=100e6,
         target_bedrooms=2,
         target_area_m2=50.0,
         preferred_districts=[],
         top_k=5,
     )
     assert len(recs) == 0
+
+
+def test_recommend_uses_thu_duc_district():
+    """Test với tên quận 'Thành phố Thủ Đức' (sau sáp nhập 2021)."""
+    from src.recommender import RecommendationEngine
+
+    eng = RecommendationEngine()
+    recs = eng.recommend(
+        _make_listings(),
+        budget_vnd=10e9,
+        target_bedrooms=3,
+        target_area_m2=70.0,
+        preferred_districts=["Thành phố Thủ Đức"],
+        top_k=3,
+    )
+    districts = recs["district_clean"].tolist()
+    assert all(d == "Thành phố Thủ Đức" for d in districts)

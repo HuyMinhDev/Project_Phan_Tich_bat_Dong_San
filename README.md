@@ -338,7 +338,7 @@ openpyxl>=3.0.0
 
 ## Chạy lại toàn bộ pipeline
 
-### Cách 1 — Một lệnh duy nhất (khuyến nghị)
+### Một lệnh duy nhất (khuyến nghị)
 
 ```bash
 cd src/ChuoiKhoiUngDung
@@ -353,48 +353,6 @@ Script này tự động:
 4. Sinh toàn bộ output vào `reports/` + `data/processed/`
 
 ⏱️ Tổng thời gian: ~25–30 giây.
-
-### Cách 2 — Chạy từng phần
-
-**1. Tạo nguồn dữ liệu thứ 2 (nếu chưa có):**
-
-```bash
-python3 -m scripts.make_neighborhood_amenities
-```
-
-**2. Chạy tests:**
-
-```bash
-python3 -m pytest tests/ -v
-# Mong đợi: 45 passed
-```
-
-**3. Chạy pipeline end-to-end:**
-
-```bash
-python3 -m src.pipeline
-```
-
-Output:
-
-- `data/processed/listings_clean.csv`
-- `data/processed/listings_with_amenities.csv`
-- `data/processed/listings_with_clusters.csv`
-- `reports/metrics.json`
-- `reports/sample_recommendations.csv`
-
-**4. Chạy notebooks (headless, qua nbclient):**
-
-```bash
-PYTHONPATH=. python3 scripts/run_notebooks.py
-```
-
-**5. Chạy notebooks (Jupyter UI):**
-
-```bash
-jupyter notebook notebooks/
-# Mở lần lượt 01 → 02 → 03 → 04, nhấn "Run All Cells"
-```
 
 ### Output files
 
